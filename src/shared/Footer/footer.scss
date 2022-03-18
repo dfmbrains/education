@@ -1,0 +1,105 @@
+.footer {
+  background: #D3E5FE;
+
+  &__row {
+    padding: 60px 0 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 39px;
+    color: #222222;
+    margin: 0 0 24px;
+  }
+
+  &__education {
+
+    &_social {
+      margin: 24px 0 0;
+      display: flex;
+      column-gap: 16px;
+
+      a {
+        border-radius: 4px;
+        width: 48px;
+        height: 48px;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        i {
+          color: #086CF9;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 155%;
+    color: #555555;
+    margin: 0 0 32px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    a {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 21px;
+      color: #444444;
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin: 0 0 16px;
+      }
+
+      i {
+        color: #086CF9;
+        font-size: 20px;
+        margin: 0 7px 0 0;
+      }
+    }
+  }
+
+  &__contact {
+    display: flex;
+    flex-direction: column;
+
+    .footer__subtitle {
+      margin: 0 0 16px;
+    }
+
+    div {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+
+      i {
+        color: #222222;
+        font-size: 20px;
+      }
+
+      a, p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 21px;
+        color: #444444;
+      }
+    }
+
+    .margin {
+      margin: 16px 0;
+    }
+  }
+}

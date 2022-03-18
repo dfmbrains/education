@@ -1,0 +1,53 @@
+.header {
+  padding: 30px 0;
+}
+.header__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__title {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 31px;
+  color: #222222;
+}
+.header__menu {
+  display: flex;
+  align-items: center;
+}
+.header__menu li:not(:last-child) {
+  margin: 0 45px 0 0;
+}
+.header__menu a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 155%;
+  color: #222222;
+}
+.header__menu a svg {
+  margin: 0 0 0 3px;
+  font-size: 12px;
+}
+.header__menu .active {
+  color: #086CF9;
+}
+.header__sign {
+  display: flex;
+}
+.header__sign button {
+  padding: 12px 25px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: capitalize;
+}
+.header__sign button:last-child {
+  color: #FFFFFF;
+}
+.header__sign button:first-child {
+  color: #222222;
+}
+
+/*# sourceMappingURL=header.css.map */

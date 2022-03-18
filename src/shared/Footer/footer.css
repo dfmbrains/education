@@ -1,0 +1,87 @@
+.footer {
+  background: #D3E5FE;
+}
+.footer__row {
+  padding: 60px 0 80px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer__title {
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 39px;
+  color: #222222;
+  margin: 0 0 24px;
+}
+.footer__education_social {
+  margin: 24px 0 0;
+  display: flex;
+  column-gap: 16px;
+}
+.footer__education_social a {
+  border-radius: 4px;
+  width: 48px;
+  height: 48px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__education_social a i {
+  color: #086CF9;
+  font-size: 20px;
+}
+.footer__subtitle {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 155%;
+  color: #555555;
+  margin: 0 0 32px;
+}
+.footer__card {
+  display: flex;
+  flex-direction: column;
+}
+.footer__card a {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #444444;
+  display: flex;
+  align-items: center;
+}
+.footer__card a:not(:last-child) {
+  margin: 0 0 16px;
+}
+.footer__card a i {
+  color: #086CF9;
+  font-size: 20px;
+  margin: 0 7px 0 0;
+}
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+}
+.footer__contact .footer__subtitle {
+  margin: 0 0 16px;
+}
+.footer__contact div {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+}
+.footer__contact div i {
+  color: #222222;
+  font-size: 20px;
+}
+.footer__contact div a, .footer__contact div p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #444444;
+}
+.footer__contact .margin {
+  margin: 16px 0;
+}
+
+/*# sourceMappingURL=footer.css.map */

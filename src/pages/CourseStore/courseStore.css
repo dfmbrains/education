@@ -1,0 +1,78 @@
+.courseStore {
+  padding: 32px;
+}
+.courseStore__title {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 40px;
+  letter-spacing: -0.24px;
+  color: #030235;
+  margin: 0 0 40px;
+}
+.courseStore__row {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 50px;
+  row-gap: 30px;
+}
+.courseStore__card {
+  width: calc(33.3333333333% - 33.3333333333px);
+  box-shadow: 0 24px 38px rgba(47, 53, 57, 0.03), 0 9px 46px rgba(71, 116, 138, 0.02), 0 11px 15px rgba(95, 137, 158, 0.04);
+  transition: 0.3s;
+}
+.courseStore__card:hover {
+  transition: 0.3s;
+}
+.courseStore__card_top {
+  background: #C9C7EF;
+  border-radius: 12px 12px 0 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  column-gap: 15px;
+}
+.courseStore__card_top img {
+  width: 60px;
+  height: 60px;
+}
+.courseStore__card_title {
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 24px;
+  color: #030235;
+}
+.courseStore__card_mentor {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.078px;
+  color: #030235;
+  opacity: 0.7;
+}
+.courseStore__card_bot {
+  background: #FFF;
+  padding: 10px 20px 15px;
+  border-radius: 0 0 12px 12px;
+}
+.courseStore__card_bot button {
+  width: 100%;
+  display: block;
+  margin: 25px 0 0;
+  background: #f6f7ff;
+  color: #030235;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: capitalize;
+}
+.courseStore__card_bot button:hover {
+  background: #C9C7EF;
+}
+.courseStore__card_subtitle {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: #030235;
+}
+
+/*# sourceMappingURL=courseStore.css.map */

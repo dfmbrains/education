@@ -1,0 +1,120 @@
+.topBar {
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 24px 38px rgba(47, 53, 57, 0.03), 0 9px 46px rgba(71, 116, 138, 0.02), 0 11px 15px rgba(95, 137, 158, 0.04);
+}
+.topBar form {
+  width: 520px;
+  margin: 0 0 0 200px;
+  border-radius: 8px;
+  padding: 10px 10px 10px 20px;
+  display: flex;
+  align-items: center;
+  background: #e7eafb;
+}
+.topBar form button {
+  border: none;
+  background: none;
+  color: #030235;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  min-width: auto;
+  margin: 0 15px 0 0;
+  position: relative;
+}
+.topBar form label {
+  width: 100%;
+}
+.topBar form input {
+  border: none;
+  outline: none;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: #98A0AD;
+  width: 100%;
+  background: none;
+  border-radius: 6px;
+}
+.topBar form input::placeholder {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: #98A0AD;
+}
+
+.tools {
+  z-index: 1;
+  position: absolute;
+  top: 17px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+.tools i {
+  color: #030235;
+  transition: 0.3s;
+  font-size: 26px;
+}
+.tools div {
+  cursor: pointer;
+  border: 1px solid rgba(89, 100, 118, 0.16);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: 0.3s;
+}
+.tools_profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tools_profile:hover {
+  background: #030235;
+  transition: 0.3s;
+}
+.tools_profile:hover i {
+  transition: 0.3s;
+  color: white;
+}
+.tools_cart {
+  color: #030235;
+  font-size: 12px;
+  padding: 5px;
+  position: relative;
+}
+.tools_cart:hover {
+  border: 1px solid #030235;
+  transition: 0.3s;
+}
+.tools_cart:hover i {
+  opacity: 0;
+  transition: 0.1s;
+}
+.tools_cart:hover p {
+  opacity: 1;
+}
+.tools_cart i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.tools_cart p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 24px;
+  color: #030235;
+  transition: 0.3s;
+  opacity: 0;
+}
+
+/*# sourceMappingURL=topBar.css.map */
