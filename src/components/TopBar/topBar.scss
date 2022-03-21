@@ -61,56 +61,121 @@
   align-items: center;
   column-gap: 20px;
 
+  .tools__back {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #030235;
+    text-transform: capitalize;
+
+    i {
+      font-size: 18px;
+      margin: 0;
+    }
+  }
+
   i {
     color: #030235;
     transition: 0.3s;
     font-size: 26px;
   }
 
-  div {
+  &_profile {
+    border: 1px solid rgba(89, 100, 118, 0.16);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: 0.1s;
+    z-index: 2;
+
+    &_dropdown {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%);
+      height: 0;
+      overflow: hidden;
+      width: 40px;
+      transition: 0.2s;
+      background: #030235;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      z-index: -1;
+
+      div:first-child {
+        margin: 43px 0 0;
+      }
+
+
+      i {
+        cursor: pointer;
+
+        &:hover {
+          color: #98A0AD !important;
+          transition: 0.3s !important;
+        }
+      }
+    }
+
+
+    &:hover {
+      background: #030235;
+      border-radius: 50% 50% 0 0;
+
+      .tools_profile_dropdown {
+        height: 130px;
+        transition: 0.3s;
+      }
+
+      i {
+        transition: 0.3s;
+        color: white;
+      }
+    }
+  }
+
+  &_cart {
     cursor: pointer;
     border: 1px solid rgba(89, 100, 118, 0.16);
     border-radius: 50%;
     width: 40px;
     height: 40px;
     transition: 0.3s;
-  }
-  &_profile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &:hover {
-      background: #030235;
-      transition: 0.3s;
-    }
-    &:hover i {
-      transition: 0.3s;
-      color: white;
-    }
-  }
-
-  &_cart {
     color: #030235;
     font-size: 12px;
     padding: 5px;
     position: relative;
+
     &:hover {
       border: 1px solid #030235;
       transition: 0.3s;
     }
+
     &:hover i {
       opacity: 0;
       transition: 0.1s;
     }
+
     &:hover p {
       opacity: 1;
     }
+
     i {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
+
     p {
       position: absolute;
       top: 50%;

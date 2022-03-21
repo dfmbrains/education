@@ -21,11 +21,14 @@
   width: 100%;
   border-radius: 0 24px 24px 0;
   cursor: pointer;
-  color: #D0D3D8;
+  color: #cacdd2;
   font-weight: 500;
   font-size: 15px;
   line-height: 24px;
   padding: 8px 0 8px 25px;
+}
+.aside__menu a:hover {
+  color: #f7faff;
 }
 .aside__menu .active {
   color: #FFFFFF;
@@ -39,10 +42,6 @@
   text-transform: uppercase;
   padding: 0 0 0 25px;
   margin: 32px 0 5px;
-}
-.aside__settings {
-  position: absolute;
-  bottom: 5%;
 }
 
 /*# sourceMappingURL=aside.css.map */

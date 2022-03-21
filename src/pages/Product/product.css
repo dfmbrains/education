@@ -57,9 +57,11 @@
 }
 .product__right img {
   width: 100%;
+  margin: 0 0 30px;
+}
+.product__right_animate {
   transform: rotateY(0);
   animation: rotateImg 5s linear infinite;
-  margin: 0 0 30px;
 }
 .product__right_row {
   display: flex;

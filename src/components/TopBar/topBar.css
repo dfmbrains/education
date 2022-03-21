@@ -55,26 +55,69 @@
   align-items: center;
   column-gap: 20px;
 }
+.tools .tools__back {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #030235;
+  text-transform: capitalize;
+}
+.tools .tools__back i {
+  font-size: 18px;
+  margin: 0;
+}
 .tools i {
   color: #030235;
   transition: 0.3s;
   font-size: 26px;
 }
-.tools div {
-  cursor: pointer;
+.tools_profile {
   border: 1px solid rgba(89, 100, 118, 0.16);
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  transition: 0.3s;
-}
-.tools_profile {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  transition: 0.1s;
+  z-index: 2;
+}
+.tools_profile_dropdown {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%);
+  height: 0;
+  overflow: hidden;
+  width: 40px;
+  transition: 0.2s;
+  background: #030235;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  z-index: -1;
+}
+.tools_profile_dropdown div:first-child {
+  margin: 43px 0 0;
+}
+.tools_profile_dropdown i {
+  cursor: pointer;
+}
+.tools_profile_dropdown i:hover {
+  color: #98A0AD !important;
+  transition: 0.3s !important;
 }
 .tools_profile:hover {
   background: #030235;
+  border-radius: 50% 50% 0 0;
+}
+.tools_profile:hover .tools_profile_dropdown {
+  height: 130px;
   transition: 0.3s;
 }
 .tools_profile:hover i {
@@ -82,6 +125,12 @@
   color: white;
 }
 .tools_cart {
+  cursor: pointer;
+  border: 1px solid rgba(89, 100, 118, 0.16);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: 0.3s;
   color: #030235;
   font-size: 12px;
   padding: 5px;

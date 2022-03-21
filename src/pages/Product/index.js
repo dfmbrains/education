@@ -14,7 +14,7 @@ import {Button} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {setItemInCart, deleteItemFromCart} from '../../redux/cart/reducer';
 
-const Product = () => {
+const Product = ({person, setPreson}) => {
 
     //data
     const {path} = useParams();
@@ -60,20 +60,31 @@ const Product = () => {
             return itemOfProduct = item
         }
     });
+
     const cartItems = useSelector(state => state.cart.itemsInCart);
     const isItemInCart = cartItems.some(item => item?.id === itemOfProduct?.id);
     const dispatch = useDispatch();
     const cartHandler = () => {
         setCongratulation(!congratulation);
         if (!isItemInCart) {
-            dispatch(setItemInCart(itemOfProduct))
+            return dispatch(setItemInCart(itemOfProduct))
         } else {
-            dispatch(deleteItemFromCart(itemOfProduct.id))
+            return dispatch(deleteItemFromCart(itemOfProduct.id))
         }
     };
 
     //congratulation
     const [congratulation, setCongratulation] = useState(false);
+
+    const [arrPersonItems, setArrPersonItems] = useState([]);
+    // person.cart.reduce((acc, rec) => {
+    //     return arrPersonItems = [...acc, rec]
+    // }, []);
+    useEffect(() => {
+        axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+            .then(({data}) => setArrPersonItems(data[0].cart))
+    }, []);
+
 
     return (
         <section className="product">
@@ -123,7 +134,7 @@ const Product = () => {
                                 </div>
                             </div>
                             <div className="product__right">
-                                <img src={item.imgUrl} alt="html"/>
+                                <img className="product__right_animate" src={item.imgUrl} alt="html"/>
                                 <div className="product__right_row">
                                     <p className="product__right_sale">
                                         {Math.ceil(item.price * 1.15)}$
@@ -131,10 +142,25 @@ const Product = () => {
                                     <p className="product__right_price">{item.price}$</p>
                                 </div>
                                 {
-                                    !isItemInCart ? <Button className="product__right_btn" variant="contained"
+                                    arrPersonItems?.length > 0 ?
+                                        (arrPersonItems.some(el => item.title.toLowerCase() === el.title.toLowerCase())
+                                            ? ''
+                                            : (
+                                                !isItemInCart ?
+                                                    <Button className="product__right_btn" variant="contained"
                                                             onClick={() => cartHandler()}>Buy Now!</Button>
-                                        : <Button className="product__right_btn product__right_delete" variant="text"
-                                                  onClick={() => cartHandler()}>Delete From Cart</Button>
+                                                    : <Button className="product__right_btn product__right_delete"
+                                                              variant="text"
+                                                              onClick={() => cartHandler()}>Delete From Cart</Button>
+                                            ))
+                                        : (
+                                            !isItemInCart ?
+                                                <Button className="product__right_btn" variant="contained"
+                                                        onClick={() => cartHandler()}>Buy Now!</Button>
+                                                : <Button className="product__right_btn product__right_delete"
+                                                          variant="text"
+                                                          onClick={() => cartHandler()}>Delete From Cart</Button>
+                                        )
                                 }
                             </div>
                         </div>
@@ -191,9 +217,7 @@ const Product = () => {
                                         <i className="ri-close-line"/>
                                     </Button>
                                 </div>
-                                <p>Now you can watch your courses <Link
-                                    onClick={() => setCongratulation(!congratulation)}
-                                    to="/app">here...</Link></p>
+                                <p>You added this course on cart</p>
                             </>
                     }
                 </div>

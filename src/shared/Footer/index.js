@@ -31,20 +31,20 @@ const Footer = () => {
                     </div>
                     <div className="footer__card">
                         <h2 className="footer__title">Feature Links</h2>
-                        <Link to="/"><i class="ri-arrow-right-s-line"/>About Us</Link>
-                        <Link to="/"><i class="ri-arrow-right-s-line"/>Graduation</Link>
-                        <Link to="/"><i class="ri-arrow-right-s-line"/>Scholarship</Link>
-                        <Link to="/"><i class="ri-arrow-right-s-line"/>Admissions</Link>
-                        <Link to="/"><i class="ri-arrow-right-s-line"/>International</Link>
-                        <Link to="/"><i class="ri-arrow-right-s-line"/>Events</Link>
+                        <Link to="/"><i className="ri-arrow-right-s-line"/>About Us</Link>
+                        <Link to="/"><i className="ri-arrow-right-s-line"/>Graduation</Link>
+                        <Link to="/"><i className="ri-arrow-right-s-line"/>Scholarship</Link>
+                        <Link to="/"><i className="ri-arrow-right-s-line"/>Admissions</Link>
+                        <Link to="/"><i className="ri-arrow-right-s-line"/>International</Link>
+                        <Link to="/"><i className="ri-arrow-right-s-line"/>Events</Link>
                     </div>
                     <div className="footer__card">
                         <h2 className="footer__title">Support</h2>
-                        <Link to="/"><i class="ri-arrow-right-s-line"/>Language</Link>
-                        <Link to="/"><i class="ri-arrow-right-s-line"/>WordPress</Link>
-                        <Link to="/"><i class="ri-arrow-right-s-line"/>Privacy</Link>
-                        <Link to="/"><i class="ri-arrow-right-s-line"/>FAQs</Link>
-                        <Link to="/"><i class="ri-arrow-right-s-line"/>Support</Link>
+                        <Link to="/"><i className="ri-arrow-right-s-line"/>Language</Link>
+                        <Link to="/"><i className="ri-arrow-right-s-line"/>WordPress</Link>
+                        <Link to="/"><i className="ri-arrow-right-s-line"/>Privacy</Link>
+                        <Link to="/"><i className="ri-arrow-right-s-line"/>FAQs</Link>
+                        <Link to="/"><i className="ri-arrow-right-s-line"/>Support</Link>
                     </div>
                     <div className="footer__contact">
                         <h2 className="footer__title">Contact Us</h2>

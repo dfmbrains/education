@@ -1,9 +1,28 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import axios from "axios";
+import welcome from '../../assets/images/welcome.png';
+import './welcome.css';
 
-const Welcome = () => {
+const Welcome = ({person, setPerson}) => {
+
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+            .then(({data}) => setPerson(data[0]));
+        axios('http://localhost:8080/users')
+            .then(({data}) => setUsers(data))
+    }, [person]);
+
     return (
-        <div>
-            Welcome
+        <div className="welcome">
+            <div className="welcome__text">
+                <h1>{users.length}</h1>
+                <p className="welcome__title">Человека уже купили курсы, купи и ты!</p>
+            </div>
+            <div className="welcome__img">
+                <img src={welcome} alt="welcome"/>
+            </div>
         </div>
     );
 };

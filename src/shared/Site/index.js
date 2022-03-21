@@ -3,10 +3,10 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Home from "../../pages/Home";
 
-const Site = () => {
+const Site = ({person, setPerson}) => {
     return (
         <>
-            <Header/>
+            <Header person={person} setPerson={setPerson}/>
             <main>
                 <Home/>
             </main>

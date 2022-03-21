@@ -5,7 +5,7 @@ import {Button} from "@mui/material";
 import '../../shared/Platform/platform.css';
 import {Link, useNavigate} from "react-router-dom";
 
-const CourseStore = () => {
+const CourseStore = ({person, setPreson}) => {
 
     //navigate
     const navigate = useNavigate();
@@ -36,24 +36,24 @@ const CourseStore = () => {
                     </Button>
                 </form>
             </section>
-            <section className="courseStore">
-                <h2 className="courseStore__title">Education courses</h2>
-                <div className="courseStore__row">
+            <section className="coursesApp">
+                <h2 className="coursesApp__title">Education coursesApp</h2>
+                <div className="coursesApp__row">
                     {
                         course.filter((el) => el.title.toLowerCase().includes(search)).map((item) => (
-                            <div key={item.id} className="courseStore__card">
-                                <div className="courseStore__card_top">
+                            <div key={item.id} className="coursesApp__card">
+                                <div className="coursesApp__card_top">
                                     <Link to={item.title.toLowerCase()}>
                                         <img src={item.imgUrl} alt={item.title}/>
                                     </Link>
                                     <div>
-                                        <h3 className="courseStore__card_title">{item.title}</h3>
-                                        <p className="courseStore__card_mentor">{item.mentor}</p>
+                                        <h3 className="coursesApp__card_title">{item.title}</h3>
+                                        <p className="coursesApp__card_mentor">{item.mentor}</p>
                                     </div>
                                 </div>
-                                <div className="courseStore__card_bot">
-                                    <p className="courseStore__card_subtitle">{item.description}</p>
-                                    <Button onClick={() => navigate(`${item.title.toLowerCase()}`)} variant="contained">Buy
+                                <div className="coursesApp__card_bot">
+                                    <p className="coursesApp__card_subtitle">{item.description}</p>
+                                    <Button className="coursesApp__card_bot-btn" onClick={() => navigate(`${item.title.toLowerCase()}`)} variant="contained">Buy
                                         Now!</Button>
                                 </div>
                             </div>

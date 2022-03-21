@@ -1,0 +1,147 @@
+.myLessons {
+  display: flex;
+  padding: 0;
+  position: relative;
+
+  .myLessons__back {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    color: #030235;
+
+    i {
+      font-size: 18px;
+      margin: 0 5px 0 0;
+    }
+  }
+
+  .aside__title {
+    padding: 25px 0 25px 25px;
+    margin: 0 0 25px;
+    border-bottom: 1px solid white;
+  }
+
+  &__menu {
+    background: #080721;
+    width: 18%;
+    height: 100vh;
+    position: relative;
+    overflow: auto;
+  }
+
+  &__list {
+
+    table {
+      min-width: unset;
+
+      tr {
+        cursor: pointer;
+
+        &:hover {
+          td {
+            background-color: #FAFAFB;
+            color: #080721;
+            transition: 0.3s;
+          }
+
+          th {
+            background-color: #FAFAFB;
+            color: #080721;
+            transition: 0.3s;
+          }
+        }
+
+        td {
+          transition: 0.3s;
+          padding: 8px 5px 8px;
+        }
+
+        th {
+          padding: 8px 15px 8px 5px;
+          transition: 0.3s;
+        }
+
+        .myLessons__list_item {
+          background-color: #331a4d;
+        }
+      }
+    }
+  }
+
+  .product__row {
+    align-items: flex-start;
+  }
+
+  &__content {
+    padding: 17px 32px 20px;
+    width: 82%;
+    height: 100vh;
+    background: #FAFAFB;
+    overflow: auto;
+
+    &_row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      i {
+        font-size: 40px;
+        color: #FFBBBB;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover {
+          color: #ff7f7f;
+          transition: 0.3s;
+        }
+      }
+    }
+
+    &_title {
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 16px;
+      color: #030235;
+    }
+
+    &_name {
+      font-size: 24px;
+      line-height: 16px;
+      color: #030235;
+      margin: 10px 0 45px;
+    }
+
+    .myLessons__content_video {
+      width: 80%;
+      background: rgba(24, 32, 50, 0.1);
+      height: 400px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 12px;
+      box-shadow: 0 24px 38px rgba(59, 66, 70, 0.05), 0 9px 46px rgba(24, 52, 70, 0.06), 0 11px 15px rgba(29, 42, 70, 0.06);
+      border: 1px solid rgba(0, 0, 0, 0.38);
+      &:hover i {
+        font-size: 68px;
+        transition: 0.3s;
+      }
+
+      i {
+        cursor: pointer;
+        font-size: 65px;
+        transition: 0.3s;
+        color: rgba(0, 0, 0, 0.38);
+
+        &:hover {
+          color: rgba(0, 0, 0, 0.47);
+          font-size: 75px;
+          transition: 0.3s;
+        }
+      }
+    }
+  }
+}

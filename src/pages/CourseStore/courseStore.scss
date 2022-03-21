@@ -1,4 +1,4 @@
-.courseStore {
+.coursesApp {
   padding: 32px;
 
   &__title {
@@ -61,7 +61,7 @@
       padding: 10px 20px 15px;
       border-radius: 0 0 12px 12px;
 
-      button {
+      .coursesApp__card_bot-btn {
         width: 100%;
         display: block;
         margin: 25px 0 0;
@@ -76,6 +76,47 @@
           background: #C9C7EF;
         }
       }
+      &-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+          display: block;
+          margin: 25px 0 0;
+          background: #f6f7ff;
+          color: #030235;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 20px;
+          text-transform: capitalize;
+          border: 1px solid transparent;
+
+          &:first-child {
+            width: 80%;
+
+            &:hover {
+              background: #C9C7EF;
+            }
+          }
+
+          &:last-child {
+            color: #970e00;
+            border: 1px solid #970e00;
+            background: #970e0020;
+            max-height: unset;
+            min-width: unset;
+            font-size: 18px;
+            padding: unset;
+            height: 34px;
+            width: 40px;
+
+            &:hover {
+              background: rgba(151, 14, 0, 0.17);
+            }
+          }
+        }
+      }
     }
 
     &_subtitle {
@@ -83,6 +124,53 @@
       font-size: 15px;
       line-height: 24px;
       color: #030235;
+    }
+  }
+
+  &__none {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h3 {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 26px;
+      text-align: center;
+      color: #030235;
+      margin: 15px 0 5px;
+    }
+
+    a {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #030235;
+      display: flex;
+      align-items: center;
+      column-gap: 7px;
+      justify-content: center;
+      position: relative;
+      padding: 0 0 5px;
+      &:hover span {
+        width: 150px;
+        transition: 0.3s;
+      }
+      i {
+        font-size: 20px;
+      }
+      span {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-48%);
+        display: inline-block;
+        background: #030235;
+        height: 1px;
+        width: 0;
+        transition: 0.3s;
+      }
     }
   }
 }

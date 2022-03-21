@@ -1,18 +1,24 @@
 import React from 'react';
 import Aside from "../Aside";
 import './platform.css';
-import {Outlet} from "react-router-dom";
+import {Navigate, Outlet} from "react-router-dom";
 import TopBar from "../../components/TopBar";
 
-const Main = () => {
+const Main = ({person, setPerson}) => {
     return (
-        <article style={{display: "flex"}}>
-            <Aside/>
-            <main className="main">
-                <TopBar/>
-                <Outlet/>
-            </main>
-        </article>
+        <>
+            {
+                person ?
+                    <article style={{display: "flex"}}>
+                        <Aside/>
+                        <main className="main">
+                            <TopBar person={person} setPerson={setPerson}/>
+                            <Outlet/>
+                        </main>
+                    </article>
+                    : <Navigate to="/signin"/>
+            }
+        </>
     );
 };
 

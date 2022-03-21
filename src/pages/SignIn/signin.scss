@@ -1,0 +1,153 @@
+.account {
+  height: 100vh;
+  width: 100%;
+  background: #FAFAFB;
+
+  &__top {
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+
+    &_title {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 31px;
+      color: #030235;
+
+      a {
+        color: #030235;
+      }
+    }
+
+    .account__top_btn {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 24px;
+      color: #030235;
+      border: 1px solid #030235;
+      text-transform: capitalize;
+
+      &:hover {
+        background: #eee8ff;
+        border: 1px solid #030235;
+      }
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 52px;
+    color: #030235;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: #030235;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    a {
+      font-weight: bold;
+      font-size: 15px;
+      line-height: 20px;
+      color: #030235;
+    }
+  }
+
+  &__row {
+    display: flex;
+    padding: 0 140px 0;
+    column-gap: 20px;
+  }
+
+  &__left {
+    width: 47%;
+
+    img {
+      margin: 30px 0 0;
+      width: 445px;
+      height: 420px;
+    }
+  }
+
+  &__form {
+    width: 40%;
+    background: #FFFFFF;
+    border-radius: 28px;
+    box-shadow: 0 11px 15px 0 #5F899E0A, 0 24px 38px 0 #2F353908, 0 9px 46px 0 #47748A05;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 50px;
+    position: relative;
+
+    &_title {
+      font-weight: 500;
+      font-size: 32px;
+      line-height: 40px;
+      text-align: center;
+      letter-spacing: -0.24px;
+      color: #030235;
+      margin: 0 0 10px;
+    }
+
+    &_subtitle {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      text-align: center;
+      color: #6B6E85;
+      margin: 0 0 30px;
+    }
+
+    &_descr {
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 24px;
+      display: flex;
+      align-items: flex-end;
+      color: #6B6E85;
+      margin: 0 0 5px;
+    }
+
+    &_input {
+      border: 2px solid rgba(89, 100, 118, 0.16);
+      border-radius: 12px;
+      width: 100%;
+      padding: 11px 20px 13px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #030235;
+      outline: none;
+      margin: 0 0 20px;
+
+      &::placeholder {
+        color: #98A0AD;
+      }
+
+      &:focus {
+        border: 2px solid #030235;
+      }
+    }
+
+    .account__form_btn {
+      background: #030235;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 20px;
+      color: #FFFFFF;
+      width: 100%;
+      text-transform: capitalize;
+      height: 45px;
+      margin: 12px 0 0;
+      border-radius: 10px;
+    }
+  }
+}
