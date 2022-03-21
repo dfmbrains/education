@@ -22,6 +22,7 @@ function App() {
         number: null,
         email: null,
         password: null,
+        img: null,
         cart: []
     });
     useEffect(() => {
@@ -29,20 +30,52 @@ function App() {
             .then(({data}) => setPerson(data[0]))
     }, []);
 
+    const [language, setLanguage] = useState(true);
+
     return (
         <>
             <Routes>
-                <Route path="/" element={<Site person={person} setPerson={setPerson}/>}/>
-                <Route path="/signin" element={<SignIn person={person} setPerson={setPerson}/>}/>
-                <Route path="/signup" element={<SignUp person={person} setPerson={setPerson}/>}/>
-                <Route path="/app" element={<Main person={person} setPerson={setPerson}/>}>
-                    <Route index element={<Welcome person={person} setPerson={setPerson}/>}/>
-                    <Route path="courses" element={<MyCourses person={person} setPerson={setPerson}/>}/>
-                    <Route path="store" element={<CourseStore person={person} setPerson={setPerson}/>}/>
-                    <Route path="settings" element={<Settings person={person} setPerson={setPerson}/>}/>
-                    <Route path="store/:path" element={<Product person={person} setPerson={setPerson}/>}/>
+                <Route path="/" element={<Site language={language}
+                                               setLanguage={setLanguage}
+                                               person={person}
+                                               setPerson={setPerson}/>}/>
+                <Route path="/signin" element={<SignIn language={language}
+                                                       setLanguage={setLanguage}
+                                                       person={person}
+                                                       setPerson={setPerson}/>}/>
+                <Route path="/signup" element={<SignUp language={language}
+                                                       setLanguage={setLanguage}
+                                                       person={person}
+                                                       setPerson={setPerson}/>}/>
+                <Route path="/app" element={<Main language={language}
+                                                  setLanguage={setLanguage}
+                                                  person={person}
+                                                  setPerson={setPerson}/>}>
+                    <Route index element={<Welcome language={language}
+                                                   setLanguage={setLanguage}
+                                                   person={person}
+                                                   setPerson={setPerson}/>}/>
+                    <Route path="courses" element={<MyCourses language={language}
+                                                              setLanguage={setLanguage}
+                                                              person={person}
+                                                              setPerson={setPerson}/>}/>
+                    <Route path="store" element={<CourseStore language={language}
+                                                              setLanguage={setLanguage}
+                                                              person={person}
+                                                              setPerson={setPerson}/>}/>
+                    <Route path="settings" element={<Settings language={language}
+                                                              setLanguage={setLanguage}
+                                                              person={person}
+                                                              setPerson={setPerson}/>}/>
+                    <Route path="store/:path" element={<Product language={language}
+                                                                setLanguage={setLanguage}
+                                                                person={person}
+                                                                setPerson={setPerson}/>}/>
                 </Route>
-                <Route path="/app/courses/:path" element={<MyProduct person={person} setPerson={setPerson}/>}/>
+                <Route path="/app/courses/:path" element={<MyProduct language={language}
+                                                                     setLanguage={setLanguage}
+                                                                     person={person}
+                                                                     setPerson={setPerson}/>}/>
             </Routes>
         </>
     );

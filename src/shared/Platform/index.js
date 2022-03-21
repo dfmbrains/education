@@ -4,15 +4,15 @@ import './platform.css';
 import {Navigate, Outlet} from "react-router-dom";
 import TopBar from "../../components/TopBar";
 
-const Main = ({person, setPerson}) => {
+const Main = ({person, setPerson, language, setLanguage}) => {
     return (
         <>
             {
                 person ?
                     <article style={{display: "flex"}}>
-                        <Aside/>
+                        <Aside language={language} setLanguage={setLanguage}/>
                         <main className="main">
-                            <TopBar person={person} setPerson={setPerson}/>
+                            <TopBar language={language} setLanguage={setLanguage} person={person} setPerson={setPerson}/>
                             <Outlet/>
                         </main>
                     </article>

@@ -195,6 +195,12 @@
     padding: 25px 25px 35px;
     background: #FFF;
     width: calc(100% / 3 - 50px / 3);
+    transition: 0.3s;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0 24px 38px rgba(47, 53, 57, 0.03), 0 9px 46px rgba(71, 116, 138, 0.02), 0 11px 15px rgba(95, 137, 158, 0.04);
+      transition: 0.3s;
+    }
 
     img {
       height: 110.5px;
@@ -287,150 +293,6 @@
   }
 }
 
-.mentor {
-  padding: 125px 0;
-
-  &__row {
-    margin: 50px 0 0;
-    display: flex;
-    align-items: center;
-    column-gap: 25px;
-  }
-
-  &__card {
-    width: calc(100% / 3 - 50px / 3);
-    border-radius: 6px;
-    box-shadow: 0 11px 55px 0 #00000020;
-
-    img {
-      width: 100%;
-      border-radius: 6px 6px 0 0;
-    }
-
-    &_content {
-      padding: 16px 32px 36px;
-    }
-
-    &_name {
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 31px;
-      color: #222222;
-    }
-
-    &_subtitle {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 155%;
-      color: #555555;
-      margin: 8px 0 20px;
-    }
-
-    &_stats {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      &-left {
-        display: flex;
-        align-items: center;
-        column-gap: 16px;
-
-        div {
-          display: flex;
-          align-items: center;
-          column-gap: 6px;
-
-          i {
-            font-size: 15px;
-          }
-
-          &:last-child i {
-            color: #086CF9;
-          }
-        }
-      }
-
-      p {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 155%;
-        color: #555555;
-      }
-    }
-  }
-}
-
-.event {
-  padding: 0 0 125px;
-
-  &__row {
-    display: flex;
-    column-gap: 25px;
-    margin: 50px 0 0;
-  }
-
-  &__card {
-    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.08);
-    border-radius: 6px;
-    position: relative;
-
-    img {
-      width: 100%;
-      border-radius: 6px 6px 0 0;
-    }
-
-    &_content {
-      padding: 24px 24px 32px;
-    }
-
-    &_title {
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 26px;
-      color: #222222;
-      margin: 0 0 20px;
-    }
-
-    &_info {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      div {
-        display: flex;
-        align-items: center;
-        column-gap: 8px;
-      }
-
-      p {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 155%;
-        color: #555555;
-      }
-    }
-
-    &_date {
-      text-align: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-      background: #086CF9;
-      border-radius: 6px 0 0 0;
-      padding: 8px 12px;
-
-      p {
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 23px;
-        color: #FFFFFF;
-      }
-    }
-  }
-}
-
 .statistics {
   padding: 72px 0;
   background: #D3E5FE;
@@ -463,68 +325,8 @@
   }
 }
 
-.blog {
-  padding: 125px 0;
-
-  &__row {
-    margin: 50px 0 0;
-    display: flex;
-    column-gap: 25px;
-  }
-
-  &__card {
-    border: 0.5px solid #BFBFBF;
-    box-sizing: border-box;
-    border-radius: 4px;
-    width: calc(100% / 3 - 50px / 3);
-
-    img {
-      width: 100%;
-      border-radius: 4px 4px 0 0;
-    }
-
-    &_content {
-      padding: 24px 30px 32px;
-    }
-
-    &_title {
-      font-weight: 500;
-      font-size: 20px;
-      line-height: 26px;
-      color: #222222;
-    }
-
-    &_subtitle {
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 155%;
-      color: #444444;
-      margin: 16px 0 24px;
-    }
-
-    button {
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 155%;
-      color: #086CF9;
-      text-transform: capitalize;
-    }
-  }
-
-  .blog__button {
-    padding: 16px 32px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 24px;
-    color: #FFFFFF;
-    text-transform: capitalize;
-    display: block;
-    margin: 40px auto 0;
-  }
-}
-
 .reviews {
-  padding: 0 0 125px;
+  padding: 60px 0 125px;
 
   &__swiper {
     margin: 50px 0 125px;

@@ -3,14 +3,14 @@ import Header from "../Header";
 import Footer from "../Footer";
 import Home from "../../pages/Home";
 
-const Site = ({person, setPerson}) => {
+const Site = ({person, setPerson, language, setLanguage}) => {
     return (
         <>
-            <Header person={person} setPerson={setPerson}/>
+            <Header language={language} setLanguage={setLanguage} person={person} setPerson={setPerson}/>
             <main>
-                <Home/>
+                <Home language={language} setLanguage={setLanguage}/>
             </main>
-            <Footer/>
+            <Footer language={language} setLanguage={setLanguage}/>
         </>
     );
 };

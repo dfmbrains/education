@@ -7,13 +7,12 @@ import TableRow from "@mui/material/TableRow";
 import TableContainer from "@mui/material/TableContainer";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
-import TableHead from "@mui/material/TableHead";
 import TableBody from "@mui/material/TableBody";
 import './myProduct.css';
 import {Button} from "@mui/material";
 import {Fancybox} from "@fancyapps/ui";
 
-const MyProduct = () => {
+const MyProduct = ({language, setLanguage}) => {
 
     const navigate = useNavigate();
 
@@ -92,7 +91,7 @@ const MyProduct = () => {
     return (
         <section className="product myLessons">
             <Button className="myLessons__back" onClick={() => navigate(-1)} variant="text">
-                <i className="ri-arrow-left-s-line"/> Back
+                <i className="ri-arrow-left-s-line"/> {language ? 'Back' : 'Назад'}
             </Button>
             <div className="myLessons__menu">
                 <div className="aside__title">
@@ -127,23 +126,24 @@ const MyProduct = () => {
                             <div key={item.title} className="product__row">
                                 <div className="product__left">
                                     <div className="myLessons__content_row">
-                                        <h2 className="product__title">Онлайн курсы по {item.title}</h2>
+                                        <h2 className="product__title">{language ? `${item.title} courses` : `Онлайн курсы по ${item.title}`}</h2>
                                         {
                                             !favProduct
                                                 ? <i onClick={favHandler} className="ri-heart-add-line"/>
                                                 : <i onClick={favDeleteHandler} className="ri-heart-fill"/>
                                         }
                                     </div>
-                                    <p className="product__subtitle">Здесь находятся «правильные» курсы по
-                                        профессиональному {item.title} и смежным технологиям. С теорией, ответами на
-                                        вопросы,
-                                        практикой, обратной связью по коду ("code review"). Каждый курс ведёт
-                                        преподаватель
-                                        - опытный действующий разработчик.</p>
+                                    <p className="product__subtitle">{language ? `Here are the "right" courses on
+                                        professional ${item.title} and related technologies. With theory, answers to
+                                        questions, practice, feedback on the code ("code review"). Each course leads
+                                        the teacher is an experienced active developer.` : `Здесь находятся «правильные» курсы по
+                                        профессиональному ${item.title} и смежным технологиям. С теорией, ответами на
+                                        вопросы, практикой, обратной связью по коду ("code review"). Каждый курс ведёт
+                                        преподаватель - опытный действующий разработчик.`}</p>
                                     {
                                         myLessons.map((el) => (
                                             el.id === number ? <div key={el.id}>
-                                                    <h4 className="myLessons__content_title">Урок №{el.id}</h4>
+                                                    <h4 className="myLessons__content_title">{language ? 'Lessons' : 'Урок'} №{el.id}</h4>
                                                     <h3 className="myLessons__content_name">{el.title}</h3>
                                                     <div
                                                         className="myLessons__content_video"

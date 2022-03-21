@@ -648,7 +648,7 @@
       "description": "В этом курсе вы научитесь авторизовывать пользователей вашего сайта.",
       "imgUrl": "https://cdn-icons-png.flaticon.com/512/1791/1791961.png",
       "price": 99,
-      "favourites": false,
+      "favourites": true,
       "id": 1
     },
     {
@@ -1411,21 +1411,13 @@
   },
   "users": [
     {
-      "email": "aida@mail.ru",
-      "password": "$2a$10$L8ftnCi9i81O3yWnp4UAA.UzfJQLTEkoAZXnOtESBkDsUESYTb.Bm",
-      "id": 0,
-      "name": null,
-      "surname": null,
-      "number": null,
-      "cart": []
-    },
-    {
       "email": "erbol@mail.ru",
-      "password": "$2a$10$LOkj7HXvYxQ.KhTEt9bsf.YPfLNM410mfU3W2KVqLcQ813IJBLZoC",
+      "password": "$2a$10$x4Afv28afYpDBRdW6f3LXeZqmGKYuE0GZDFFqpdCYkCEkvFGGmv8u",
       "id": 1,
-      "name": null,
-      "surname": null,
-      "number": null,
+      "name": "Erbol",
+      "surname": "Nurekov",
+      "number": "+996996996996",
+      "img": "https://static.remove.bg/remove-bg-web/581d704b6f77ec24f806185a708237a73ce0a356/assets/start_remove-c851bdf8d3127a24e2d137a55b1b427378cd17385b01aec6e59d5d4b5f39d2ec.png",
       "cart": [
         {
           "title": "CSS",
@@ -1438,13 +1430,24 @@
       ]
     },
     {
-      "email": "madina@mail.ru",
-      "password": "$2a$10$wHoDr0HNHN/rUzACxHQr3Om5gjfNVT.iegtIRe4h/zsjGX0k9IhSa",
+      "email": "max@mail.ru",
+      "password": "$2a$10$jwavKZZ4toM0OpKs/QEJA.HpOB.G29m5eFlRW1/o5emRsmmrjnBeK",
       "id": 2,
-      "name": "max",
-      "surname": "abdurasulov",
-      "number": "996700868068",
-      "cart": []
+      "name": null,
+      "surname": null,
+      "number": null,
+      "img": null,
+      "cart": [
+        {
+          "title": "Auth",
+          "mentor": "Биримкулов Максат",
+          "description": "В этом курсе вы научитесь авторизовывать пользователей вашего сайта.",
+          "imgUrl": "https://cdn-icons-png.flaticon.com/512/1791/1791961.png",
+          "price": 99,
+          "favourites": false,
+          "id": 1
+        }
+      ]
     }
   ]
 }

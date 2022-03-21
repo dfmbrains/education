@@ -4,7 +4,7 @@ import {Link, useNavigate, Navigate} from 'react-router-dom';
 import {Button} from "@mui/material";
 import teaching from "../../assets/images/home/teaching.png";
 
-const SignUp = ({person, setPerson}) => {
+const SignUp = ({person, setPerson, language, setLanguage}) => {
 
     const navigate = useNavigate();
     const createAccount = (e) => {
@@ -17,6 +17,7 @@ const SignUp = ({person, setPerson}) => {
                 name: null,
                 surname: null,
                 number: null,
+                img: null,
                 cart: [],
             }).then(({data}) => {
             setPerson({
@@ -26,6 +27,7 @@ const SignUp = ({person, setPerson}) => {
                 name: null,
                 surname: null,
                 number: null,
+                img: null,
                 cart: []
             });
             localStorage.setItem('email', e.target[0].value)
@@ -48,32 +50,32 @@ const SignUp = ({person, setPerson}) => {
                                 <Link to="/">Education.</Link>
                             </div>
                             <Button onClick={() => navigate('/signin')} className="account__top_btn"
-                                    variant="outlined"> Sign In</Button>
+                                    variant="outlined">{language ? ' Sign In' : 'Войти'}</Button>
                         </div>
                         <div className="account__row">
                             <div className="account__left">
-                                <h2 className="account__title">Change your life with Education.</h2>
+                                <h2 className="account__title">{language ? 'Change your life with Education.' : 'Измените свою жизнь с помощью Education.'}</h2>
                                 <img src={teaching} alt="teaching"/>
                             </div>
                             <div className="account__form">
                                 <div className="account__form_content">
-                                    <h3 className="account__form_title">Welcome</h3>
-                                    <p className="account__form_subtitle">lets get started with a few simple steps!</p>
+                                    <h3 className="account__form_title">{language ? 'Welcome' : 'Добро пожаловать'}</h3>
+                                    <p className="account__form_subtitle">{language ? 'Lets get started with a few simple steps!' : 'Давайте начнем с нескольких простых шагов!'}</p>
                                     <form onSubmit={createAccount}>
                                         <p className="account__form_descr">E-mail*</p>
                                         <label>
                                             <input className="account__form_input" type="email" placeholder="Email"/>
                                         </label>
-                                        <p className="account__form_descr">Password*</p>
+                                        <p className="account__form_descr">{language ? 'Password' : 'Пароль'}*</p>
                                         <label>
                                             <input className="account__form_input" type="password"
-                                                   placeholder="Password"/>
+                                                   placeholder={language ? 'Password' : 'Пароль'}/>
                                         </label>
-                                        <Button variant="contained" className="account__form_btn" type="submit">Sign
-                                            Up!</Button>
+                                        <Button variant="contained" className="account__form_btn"
+                                                type="submit">{language ? 'Sign Up!' : 'Зарегистрироваться!'}</Button>
                                     </form>
-                                    <p className="account__subtitle">Have an account?<Link
-                                        to='/signin'> Sign In</Link>
+                                    <p className="account__subtitle">{language ? 'Have an account?' : 'Нет аккаунта?'}<Link
+                                        to='/signin'>{language ? ' Sign In' : 'Войти'}</Link>
                                     </p>
                                 </div>
                             </div>

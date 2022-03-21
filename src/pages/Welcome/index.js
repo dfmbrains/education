@@ -3,7 +3,7 @@ import axios from "axios";
 import welcome from '../../assets/images/welcome.png';
 import './welcome.css';
 
-const Welcome = ({person, setPerson}) => {
+const Welcome = ({person, setPerson, language, setLanguage}) => {
 
     const [users, setUsers] = useState([]);
 
@@ -18,7 +18,7 @@ const Welcome = ({person, setPerson}) => {
         <div className="welcome">
             <div className="welcome__text">
                 <h1>{users.length}</h1>
-                <p className="welcome__title">Человека уже купили курсы, купи и ты!</p>
+                <p className="welcome__title">{language ? 'Persons has already bought courses, buy it and you!' : 'Человека уже купили курсы, купи и ты!'}</p>
             </div>
             <div className="welcome__img">
                 <img src={welcome} alt="welcome"/>

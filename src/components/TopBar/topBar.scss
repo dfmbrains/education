@@ -61,6 +61,36 @@
   align-items: center;
   column-gap: 20px;
 
+  &__language {
+    cursor: pointer;
+    border: 1px solid rgba(89, 100, 118, 0.16);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    transition: 0.3s;
+    color: #030235;
+    font-size: 12px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:hover {
+      background: #03026b;
+      transition: 0.3s;
+      p {
+        color: white;
+        transition: 0.3s;
+      }
+    }
+
+    p {
+      font-weight: bold;
+      font-size: 17px;
+      color: #030235;
+    }
+  }
+
   .tools__back {
     font-weight: 500;
     font-size: 15px;
@@ -93,6 +123,12 @@
     position: relative;
     transition: 0.1s;
     z-index: 2;
+
+    &_img {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+    }
 
     &_dropdown {
       position: absolute;

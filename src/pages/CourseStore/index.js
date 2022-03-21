@@ -5,7 +5,7 @@ import {Button} from "@mui/material";
 import '../../shared/Platform/platform.css';
 import {Link, useNavigate} from "react-router-dom";
 
-const CourseStore = ({person, setPreson}) => {
+const CourseStore = ({person, setPerson, language, setLanguage}) => {
 
     //navigate
     const navigate = useNavigate();
@@ -29,7 +29,7 @@ const CourseStore = ({person, setPreson}) => {
             <section className="topBar">
                 <form onSubmit={searchHandler}>
                     <label>
-                        <input placeholder="Search courses" type="text"/>
+                        <input placeholder={language ? 'Search courses' : "Поиск курсов"} type="text"/>
                     </label>
                     <Button variant="text" type="submit">
                         <i className="ri-search-line"/>
@@ -37,7 +37,7 @@ const CourseStore = ({person, setPreson}) => {
                 </form>
             </section>
             <section className="coursesApp">
-                <h2 className="coursesApp__title">Education coursesApp</h2>
+                <h2 className="coursesApp__title">{language ? 'All courses' : 'Курсы'}</h2>
                 <div className="coursesApp__row">
                     {
                         course.filter((el) => el.title.toLowerCase().includes(search)).map((item) => (
@@ -53,8 +53,9 @@ const CourseStore = ({person, setPreson}) => {
                                 </div>
                                 <div className="coursesApp__card_bot">
                                     <p className="coursesApp__card_subtitle">{item.description}</p>
-                                    <Button className="coursesApp__card_bot-btn" onClick={() => navigate(`${item.title.toLowerCase()}`)} variant="contained">Buy
-                                        Now!</Button>
+                                    <Button className="coursesApp__card_bot-btn"
+                                            onClick={() => navigate(`${item.title.toLowerCase()}`)}
+                                            variant="contained">{language ? 'More' : 'Подробнее'}</Button>
                                 </div>
                             </div>
                         ))

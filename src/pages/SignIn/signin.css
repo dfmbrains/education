@@ -91,7 +91,8 @@
   line-height: 20px;
   text-align: center;
   color: #6B6E85;
-  margin: 0 0 30px;
+  margin: 0 auto 30px;
+  max-width: 340px;
 }
 .account__form_descr {
   font-weight: 500;
@@ -101,6 +102,9 @@
   align-items: flex-end;
   color: #6B6E85;
   margin: 0 0 5px;
+}
+.account__form form {
+  width: 340px;
 }
 .account__form_input {
   border: 2px solid rgba(89, 100, 118, 0.16);

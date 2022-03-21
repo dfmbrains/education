@@ -6,7 +6,7 @@ import axios from "axios";
 import {useSelector} from "react-redux";
 import none from '../../assets/images/none.png';
 
-const MyCourses = ({person, setPerson}) => {
+const MyCourses = ({person, setPerson, language, setLanguage}) => {
 
     //navigate
     const navigate = useNavigate();
@@ -46,7 +46,7 @@ const MyCourses = ({person, setPerson}) => {
             <section className="topBar">
                 <form onSubmit={searchHandler}>
                     <label>
-                        <input placeholder="Search courses" type="text"/>
+                        <input placeholder={language ? 'Search courses' : 'Поиск курсов'} type="text"/>
                     </label>
                     <Button variant="text" type="submit">
                         <i className="ri-search-line"/>
@@ -54,7 +54,7 @@ const MyCourses = ({person, setPerson}) => {
                 </form>
             </section>
             <section className="coursesApp">
-                <h2 className="coursesApp__title">Your courses</h2>
+                <h2 className="coursesApp__title">{language ? 'Your courses' : 'Ваши курсы'}</h2>
                 <div className="coursesApp__row">
                     {
                         myCourses?.length > 0
@@ -73,7 +73,7 @@ const MyCourses = ({person, setPerson}) => {
                                         <p className="coursesApp__card_subtitle">{item.description}</p>
                                         <div className="coursesApp__card_bot-row">
                                             <Button onClick={() => navigate(`${item.title.toLowerCase()}`)}
-                                                    variant="contained">Watch</Button>
+                                                    variant="contained">{language ? 'Watch' : 'Смотреть курс'}</Button>
                                             <Button onClick={() => myCoursesDelete(item)} variant="contained">
                                                 <i className="ri-delete-bin-line"/>
                                             </Button>
@@ -83,10 +83,10 @@ const MyCourses = ({person, setPerson}) => {
                             )))
                             : <div className="coursesApp__none">
                                 <img src={none} alt="none"/>
-                                <h3>There aren’t any courses</h3>
+                                <h3>{language ? 'There aren’t any courses' : 'У вас еще нет купленных курсов'}</h3>
                                 <Link to="/app/store">
                                     <i className="ri-add-circle-fill"/>
-                                    Add new courses <span> </span></Link>
+                                    {language ? 'Add new courses' : 'Купить курсы'} <span> </span></Link>
                             </div>
                     }
                 </div>
