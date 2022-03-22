@@ -20,14 +20,16 @@ const Header = ({person, setPerson, language, setLanguage, burger, setBurger}) =
                     <h2 className="header__title">Education.</h2>
                     <ul className={burger ? 'header__menu_active' : 'header__menu'}>
                         <li>
-                            <NavLink onClick={() => setBurger(false)} to="/">{language ? 'Home' : 'Домашняя страница'} <FontAwesomeIcon
-                                className="blogsItems__btn_icon"
-                                icon={faChevronDown}/></NavLink>
+                            <NavLink onClick={() => setBurger(false)} to="/">{language ? 'Home' : 'Домашняя страница'}
+                                <FontAwesomeIcon
+                                    className="blogsItems__btn_icon"
+                                    icon={faChevronDown}/></NavLink>
                         </li>
                         <li>
-                            <Link onClick={() => setBurger(false)} to="/app/store">{language ? 'Courses' : 'Наши курсы'} <FontAwesomeIcon
-                                className="blogsItems__btn_icon"
-                                icon={faChevronDown}/></Link>
+                            <Link onClick={() => setBurger(false)} to="/app/store">{language ? 'Courses' : 'Наши курсы'}
+                                <FontAwesomeIcon
+                                    className="blogsItems__btn_icon"
+                                    icon={faChevronDown}/></Link>
                             <div className="header__menu_dropdown">
                                 {
                                     courses.map((item) => (
@@ -37,9 +39,10 @@ const Header = ({person, setPerson, language, setLanguage, burger, setBurger}) =
                             </div>
                         </li>
                         <li>
-                            <Link onClick={() => setBurger(false)} to="/app">{language ? 'Page' : 'Страницы'} <FontAwesomeIcon
-                                className="blogsItems__btn_icon"
-                                icon={faChevronDown}/></Link>
+                            <Link onClick={() => setBurger(false)} to="/app">{language ? 'Page' : 'Страницы'}
+                                <FontAwesomeIcon
+                                    className="blogsItems__btn_icon"
+                                    icon={faChevronDown}/></Link>
                             <div className="header__menu_dropdown">
                                 <Link to="/app">{language ? 'Welcome!' : 'Добро пожаловать!'}</Link>
                                 <Link to="/app/store">{language ? 'Course Store' : 'Магазин курсов'}</Link>
@@ -50,9 +53,10 @@ const Header = ({person, setPerson, language, setLanguage, burger, setBurger}) =
                             </div>
                         </li>
                         <li>
-                            <a onClick={() => setBurger(false)} href="#footer">{language ? 'Contacts' : 'Контакты'} <FontAwesomeIcon
-                                className="blogsItems__btn_icon"
-                                icon={faChevronDown}/></a>
+                            <a onClick={() => setBurger(false)} href="#footer">{language ? 'Contacts' : 'Контакты'}
+                                <FontAwesomeIcon
+                                    className="blogsItems__btn_icon"
+                                    icon={faChevronDown}/></a>
                         </li>
                         <div className="tools__language" onClick={() => setLanguage(!language)}>
                             <p>{!language ? 'EN' : 'RU'}</p>
@@ -64,7 +68,7 @@ const Header = ({person, setPerson, language, setLanguage, burger, setBurger}) =
                                     <Button onClick={() => navigate('/signin')} variant="text"
                                             style={{color: "#222222"}}>{language ? 'Sign In' : 'Войти'}</Button>
                                     <Button onClick={() => navigate('/signup')}
-                                            variant="contained">{language ? 'Sign Up' : 'Выйти'}</Button>
+                                            variant="contained">{language ? 'Sign Up' : 'Новый'}</Button>
                                 </div>
                             </>
                             : ''

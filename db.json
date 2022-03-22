@@ -648,7 +648,7 @@
       "description": "В этом курсе вы научитесь авторизовывать пользователей вашего сайта.",
       "imgUrl": "https://cdn-icons-png.flaticon.com/512/1791/1791961.png",
       "price": 99,
-      "favourites": true,
+      "favourites": false,
       "id": 1
     },
     {
