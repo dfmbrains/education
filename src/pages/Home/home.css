@@ -400,4 +400,304 @@
   text-transform: capitalize;
 }
 
+@media (max-width: 992px) {
+  .firstScreen__title {
+    font-size: 42px;
+    line-height: 50px;
+  }
+  .firstScreen__subtitle {
+    font-size: 15px;
+    margin: 20px 0 40px;
+  }
+  .firstScreen__subtitle br {
+    display: none;
+  }
+  .firstScreen__content button {
+    padding: 0 15px;
+    font-size: 15px;
+    line-height: 22px;
+    max-height: unset;
+    height: 45px;
+  }
+  .firstScreen__box {
+    padding: 30px 0;
+    justify-content: center;
+    column-gap: 20px;
+  }
+  .firstScreen__item {
+    justify-content: center;
+  }
+  .firstScreen__item img {
+    width: 64px;
+    height: 56px;
+  }
+  .firstScreen__item_stats {
+    font-size: 28px;
+    line-height: 42px;
+    margin: 0 0 5px;
+  }
+  .firstScreen__item_title {
+    font-size: 15px;
+  }
+
+  .about {
+    padding: 150px 0 50px;
+  }
+  .about .section__subtitle {
+    margin: 10px 0 15px;
+  }
+  .about__descr {
+    font-size: 18px;
+    margin: 0 0 20px;
+  }
+  .about button {
+    padding: 12px 28px 10px;
+    font-size: 13px;
+  }
+
+  .statistics {
+    padding: 60px 0;
+  }
+  .statistics__row {
+    column-gap: unset;
+    justify-content: space-between;
+  }
+
+  .reviews {
+    padding: 60px 0 80px;
+  }
+  .reviews__swiper {
+    margin: 40px 0 80px;
+  }
+  .reviews__swiper .swiper .swiper-button-next, .reviews__swiper .swiper .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+  }
+  .reviews__swiper .swiper .swiper-button-next::after, .reviews__swiper .swiper .swiper-button-prev::after {
+    font-size: 15px;
+  }
+  .reviews__card {
+    padding: 25px 22px 32px 13px;
+  }
+  .reviews__card_content {
+    font-size: 15px;
+    margin: 0 0 15px;
+  }
+  .reviews__card_info {
+    column-gap: 10px;
+  }
+  .reviews__card_info img {
+    width: 64px;
+    height: 64px;
+  }
+  .reviews__card_name {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+  }
+  .reviews__form {
+    padding: 30px 0 60px;
+  }
+  .reviews__form form {
+    width: 60%;
+    margin: 0 auto;
+    padding: 6px 8px 6px 12px;
+  }
+  .reviews__form form input {
+    width: 75%;
+  }
+  .reviews__form form button {
+    padding: 5px;
+    width: 23%;
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .firstScreen__title {
+    font-size: 36px;
+    line-height: 42px;
+  }
+  .firstScreen__subtitle {
+    font-size: 14px;
+    margin: 15px 0 30px;
+  }
+  .firstScreen__content button {
+    height: 40px;
+    font-size: 14px;
+  }
+  .firstScreen__box {
+    padding: 20px 0;
+  }
+  .firstScreen__item {
+    column-gap: 10px;
+    width: calc(33.3333333333% - 6.6666666667px);
+  }
+  .firstScreen__item img {
+    width: 50px;
+    height: 40px;
+  }
+  .firstScreen__item_stats {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .firstScreen__item_title {
+    font-size: 14px;
+  }
+
+  .about {
+    padding: 110px 0 40px;
+  }
+  .about__row {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  .about__left {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .about__right {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .work {
+    padding: 0 0 60px;
+  }
+  .work__row {
+    flex-wrap: wrap;
+    row-gap: 30px;
+  }
+  .work__card {
+    width: calc(50% - 25px);
+  }
+  .work__card_title {
+    font-size: 20px;
+    line-height: 22px;
+  }
+  .work__card_subtitle {
+    font-size: 13px;
+    line-height: 130%;
+  }
+
+  .courses__row {
+    column-gap: 50px;
+  }
+  .courses__card {
+    width: calc(50% - 25px);
+    padding: 15px 15px 20px;
+  }
+  .courses__card img {
+    height: 80px;
+    margin: 0 auto 10px;
+  }
+  .courses__card_items {
+    padding: 0 0 10px;
+  }
+  .courses__card_items i {
+    font-size: 15px;
+  }
+  .courses__card_items p {
+    font-size: 14px;
+  }
+  .courses__card_row {
+    margin: 10px 0;
+  }
+  .courses__card_row h3 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .courses__card_row p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .courses__card_subtitle {
+    font-size: 13px;
+    line-height: 130%;
+  }
+  .courses .courses__button {
+    padding: 10px;
+    margin: 30px auto 0;
+  }
+
+  .statistics {
+    padding: 40px 0;
+  }
+  .statistics__card p:first-child {
+    font-size: 36px;
+    line-height: 130%;
+    margin: 0 0 5px;
+  }
+  .statistics__card p:last-child {
+    font-size: 15px;
+    line-height: 130%;
+  }
+
+  .reviews {
+    padding: 40px 0 60px;
+  }
+  .reviews__swiper {
+    display: none;
+  }
+  .reviews__form {
+    margin: 30px auto 0;
+    padding: 20px 0 40px;
+  }
+  .reviews__form_title {
+    font-size: 28px;
+    line-height: 130%;
+  }
+  .reviews__form_subtitle {
+    font-size: 15px;
+    line-height: 130%;
+    margin: 8px 0 25px;
+  }
+  .reviews__form form input {
+    width: 65%;
+  }
+  .reviews__form form button {
+    width: 33%;
+  }
+}
+@media (max-width: 425px) {
+  .firstScreen__box {
+    column-gap: 10px;
+  }
+  .firstScreen__item img {
+    width: 40px;
+    height: 32px;
+  }
+  .firstScreen__item_stats {
+    font-size: 20px;
+    line-height: 22px;
+  }
+  .firstScreen__item_title {
+    line-height: 16px;
+  }
+
+  .courses__row {
+    column-gap: 15px;
+  }
+  .courses__card {
+    width: calc(50% - 8px);
+    padding: 10px 10px 14px;
+  }
+  .courses__card_items {
+    padding: 0 0 5px;
+  }
+  .courses__card_items div {
+    column-gap: 2px;
+  }
+
+  .reviews__form {
+    width: 100%;
+    padding: 10px;
+  }
+  .reviews__form br {
+    display: none;
+  }
+  .reviews__form form {
+    width: 100%;
+  }
+}
+
 /*# sourceMappingURL=home.css.map */

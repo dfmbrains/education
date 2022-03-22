@@ -58,7 +58,7 @@ const MyCourses = ({person, setPerson, language, setLanguage}) => {
                 <div className="coursesApp__row">
                     {
                         myCourses?.length > 0
-                            ? (myCourses.map((item) => (
+                            ? (myCourses.filter((el) => el.title.toLowerCase().includes(search)).map((item) => (
                                 <div key={item.title} className="coursesApp__card">
                                     <div className="coursesApp__card_top">
                                         <Link to='/'>

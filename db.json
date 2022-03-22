@@ -1444,8 +1444,26 @@
           "description": "В этом курсе вы научитесь авторизовывать пользователей вашего сайта.",
           "imgUrl": "https://cdn-icons-png.flaticon.com/512/1791/1791961.png",
           "price": 99,
-          "favourites": false,
+          "favourites": true,
           "id": 1
+        },
+        {
+          "title": "HTML",
+          "mentor": "Биримкулов Максат",
+          "description": "В этом курсе вы научитесь создавать скелет вашего сайта.",
+          "price": 29,
+          "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/640px-HTML5_logo_and_wordmark.svg.png",
+          "favourites": true,
+          "id": 2
+        },
+        {
+          "title": "CSS",
+          "mentor": "Биримкулов Максат",
+          "description": "В этом курсе вы научитесь стилизовывать ваш сайт.",
+          "price": 189,
+          "imgUrl": "https://www.freepnglogos.com/uploads/html5-logo-png/html5-logo-css-logo-png-transparent-svg-vector-bie-supply-9.png",
+          "favourites": true,
+          "id": 3
         }
       ]
     }

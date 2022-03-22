@@ -7,6 +7,12 @@
     justify-content: space-between;
   }
 
+  &__right {
+    display: flex;
+    width: 43%;
+    justify-content: space-between;
+  }
+
   &__title {
     font-weight: 700;
     font-size: 30px;
@@ -100,6 +106,63 @@
 
     .margin {
       margin: 16px 0;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .footer {
+    padding: 50px 0 60px;
+    &__title {
+      font-size: 24px;
+      line-height: 30px;
+      margin: 0 0 15px;
+    }
+    &__subtitle {
+      font-size: 15px;
+      margin: 0 0 20px;
+    }
+    &__right {
+      width: 50%;
+    }
+    &__row {
+      padding: 0;
+    }
+    &__card {
+      a {
+        font-size: 15px;
+        line-height: 18px;
+        i {
+          font-size: 18px;
+          margin: 0 3px 0 0;
+        }
+      }
+    }
+    &__contact {
+      .footer__subtitle {
+        margin: 0 0 12px;
+      }
+      div {
+        i {
+          font-size: 18px;
+        }
+        a {
+          font-size: 15px;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    &__row {
+      flex-direction: column;
+      row-gap: 30px;
+    }
+    &__right {
+      width: 100%;
     }
   }
 }
