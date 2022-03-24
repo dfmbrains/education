@@ -10,7 +10,7 @@ const Main = ({person, setPerson, language, setLanguage}) => {
             {
                 person ?
                     <article style={{display: "flex"}}>
-                        <Aside language={language} setLanguage={setLanguage}/>
+                        <Aside person={person} setPerson={setPerson} language={language} setLanguage={setLanguage}/>
                         <main className="main">
                             <TopBar language={language} setLanguage={setLanguage} person={person} setPerson={setPerson}/>
                             <Outlet/>

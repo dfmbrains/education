@@ -23,7 +23,7 @@ const Settings = ({person, setPerson, language, setLanguage}) => {
                 img: e.target[5].value.length === 0 ? person.img : e.target[5].value
             })
             .then(({data}) => console.log(data))
-            .catch(() => console.log('error'))
+            .catch(() => alert('error'))
     };
 
 
@@ -51,7 +51,7 @@ const Settings = ({person, setPerson, language, setLanguage}) => {
                         </label>
                         <label>
                             <p>{language ? 'Write your Phone Number' : 'Напишите свой номер телефона'}</p>
-                            <input autoComplete="on" placeholder={person.number} type="tel"/>
+                            <input autoComplete="on" placeholder={person.number} type="number"/>
                         </label>
                         <label>
                             <p>{language ? 'Insert a Link to put a Photo on Profile' : 'Вставьте ссылку к фото'}</p>

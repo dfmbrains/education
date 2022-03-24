@@ -20,11 +20,12 @@ const MyCourses = ({person, setPerson, language, setLanguage}) => {
     };
 
     //data
+    // [myCourses] utechka pamyati
     const [myCourses, setMyCourses] = useState([]);
     useEffect(() => {
         axios(`http://localhost:8080/users/${person.id}`)
             .then(({data}) => setMyCourses(data.cart))
-    }, [person, person.cart, cartItems, localStorage, myCourses]);
+    }, []);
 
     //delete
     const myCoursesDelete = (item) => {

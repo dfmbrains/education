@@ -12,7 +12,7 @@ import './myProduct.css';
 import {Button} from "@mui/material";
 import {Fancybox} from "@fancyapps/ui";
 
-const MyProduct = ({language, setLanguage}) => {
+const MyProduct = ({language, setLanguage, person, setPerson}) => {
 
     const navigate = useNavigate();
 
@@ -58,35 +58,32 @@ const MyProduct = ({language, setLanguage}) => {
         },
     }));
 
-    //favorites
-    const [favProduct, setFavProduct] = useState({});
-
-    let productId;
+    //this product
+    let thisProudct = null;
     product.map((item) => {
         if (item.title.toLowerCase() === `${path}`) {
-            return productId = item.id
+            return thisProudct = item;
         }
     });
 
-    useEffect(() => {
-        axios(`http://localhost:8080/courses/${productId}`)
-            .then(({data}) => setFavProduct(data.favourites))
-    }, [favProduct, productId]);
 
-    const favHandler = () => {
-        axios.patch(`http://localhost:8080/courses/${productId}`,
+    //favorites
+    const [favourites, setFavourites] = useState([]);
+    const favHandler = async () => {
+        await favourites.push(thisProudct);
+        await axios.patch(`http://localhost:8080/users/${person.id}`,
             {
-                favourites: true
-            }).then(({data}) => setFavProduct(data.favourites))
+                favourites: [...person.favourites, ...favourites]
+            }).then(({data}) => favourites.length = 0)
+            .catch(() => alert('error'));
     };
-
-    const favDeleteHandler = () => {
-        axios.patch(`http://localhost:8080/courses/${productId}`,
+    const favDeleteHandler = async () => {
+        await axios.patch(`http://localhost:8080/users/${person.id}`,
             {
-                favourites: false
-            }).then(({data}) => setFavProduct(data.favourites))
+                favourites: person.favourites.filter(item => item.title.toLowerCase() !== thisProudct.title.toLowerCase())
+            }).then(({data}) => alert('deleted'))
+            .catch(() => alert('error'))
     };
-
 
     return (
         <section className="product myLessons">
@@ -128,9 +125,12 @@ const MyProduct = ({language, setLanguage}) => {
                                     <div className="myLessons__content_row">
                                         <h2 className="product__title">{language ? `${item.title} courses` : `Онлайн курсы по ${item.title}`}</h2>
                                         {
-                                            !favProduct
-                                                ? <i onClick={favHandler} className="ri-heart-add-line"/>
-                                                : <i onClick={favDeleteHandler} className="ri-heart-fill"/>
+                                            person.favourites.length > 0
+                                                ? (
+                                                    person.favourites.some(el => el.title.toLowerCase() === item.title.toLowerCase())
+                                                        ? <i onClick={favDeleteHandler} className="ri-heart-fill"/>
+                                                        : <i onClick={favHandler} className="ri-heart-add-line"/>
+                                                ) : <i onClick={favHandler} className="ri-heart-add-line"/>
                                         }
                                     </div>
                                     <p className="product__subtitle">{language ? `Here are the "right" courses on

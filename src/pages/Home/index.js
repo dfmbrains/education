@@ -28,7 +28,7 @@ const Home = ({language, setLanguage}) => {
     const [courses, setCourse] = useState([]);
 
     useEffect(() => {
-        axios('https://courses-final.herokuapp.com/api/courses')
+        axios('http://localhost:8080/courses')
             .then(({data}) => setCourse(data))
     }, []);
 

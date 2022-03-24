@@ -13,6 +13,7 @@ import SignUp from "./pages/SignUp";
 import axios from "axios";
 import MyProduct from "./pages/MyProduct";
 import "@fancyapps/ui/dist/fancybox.css";
+import Error from "./pages/Error";
 
 function App() {
     const [person, setPerson] = useState({
@@ -23,6 +24,7 @@ function App() {
         email: null,
         password: null,
         img: null,
+        favourites: [],
         cart: []
     });
     useEffect(() => {
@@ -76,6 +78,8 @@ function App() {
                                                                      setLanguage={setLanguage}
                                                                      person={person}
                                                                      setPerson={setPerson}/>}/>
+                <Route path="/*" element={<Error language={language}
+                                                 setLanguage={setLanguage}/>}/>
             </Routes>
         </>
     );

@@ -1,0 +1,36 @@
+.error {
+  height: 100vh;
+  position: relative;
+}
+.error__content {
+  position: absolute;
+  right: 50%;
+  top: 30%;
+}
+.error__content h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 40px;
+  color: #030235;
+  margin: 30px 0 0;
+}
+.error__content p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #6B6E85;
+  margin: 0 0 30px;
+}
+.error__content button {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #FFFFFF;
+  background: #030235;
+  text-transform: capitalize;
+}
+.error__content button:hover {
+  background: #331a4d;
+}
+
+/*# sourceMappingURL=error.css.map */

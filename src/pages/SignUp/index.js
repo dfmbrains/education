@@ -18,6 +18,7 @@ const SignUp = ({person, setPerson, language, setLanguage}) => {
                 surname: null,
                 number: null,
                 img: null,
+                favourites: [],
                 cart: [],
             }).then(({data}) => {
             setPerson({
@@ -28,10 +29,11 @@ const SignUp = ({person, setPerson, language, setLanguage}) => {
                 surname: null,
                 number: null,
                 img: null,
+                favourites: [],
                 cart: []
             });
             localStorage.setItem('email', e.target[0].value)
-        }).catch(() => 'error')
+        }).catch(() => alert('error'))
     };
 
     useEffect(() => {

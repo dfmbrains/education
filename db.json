@@ -648,7 +648,6 @@
       "description": "В этом курсе вы научитесь авторизовывать пользователей вашего сайта.",
       "imgUrl": "https://cdn-icons-png.flaticon.com/512/1791/1791961.png",
       "price": 99,
-      "favourites": false,
       "id": 1
     },
     {
@@ -657,7 +656,6 @@
       "description": "В этом курсе вы научитесь создавать скелет вашего сайта.",
       "price": 29,
       "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/640px-HTML5_logo_and_wordmark.svg.png",
-      "favourites": true,
       "id": 2
     },
     {
@@ -666,7 +664,6 @@
       "description": "В этом курсе вы научитесь стилизовывать ваш сайт.",
       "price": 189,
       "imgUrl": "https://www.freepnglogos.com/uploads/html5-logo-png/html5-logo-css-logo-png-transparent-svg-vector-bie-supply-9.png",
-      "favourites": true,
       "id": 3
     },
     {
@@ -674,7 +671,6 @@
       "mentor": "Биримкулов Максат",
       "description": "В этом курсе вы научитесь создавать логику сайта.",
       "price": 249,
-      "favourites": false,
       "imgUrl": "data:image/png;base64,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",
       "id": 4
     },
@@ -683,7 +679,6 @@
       "mentor": "Биримкулов Максат",
       "description": "В этом курсе вы научитесь создавать Web-приложения.",
       "price": 219,
-      "favourites": false,
       "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/640px-React-icon.svg.png",
       "id": 5
     },
@@ -691,7 +686,6 @@
       "title": "Redux",
       "mentor": "Биримкулов Максат",
       "price": 59,
-      "favourites": false,
       "description": "В этом курсе вы научитесь пользоваться библиотекой Redux.",
       "imgUrl": "https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png",
       "id": 6
@@ -1411,13 +1405,36 @@
   },
   "users": [
     {
-      "email": "erbol@mail.ru",
-      "password": "$2a$10$x4Afv28afYpDBRdW6f3LXeZqmGKYuE0GZDFFqpdCYkCEkvFGGmv8u",
+      "email": "max@mail.ru",
+      "password": "$2a$10$IzV7tMua9Y.lXyULdIAanu1o6t25dJFKlD0pxViI4IR3kMBrPxSei",
       "id": 1,
-      "name": "Erbol",
-      "surname": "Nurekov",
-      "number": "+996996996996",
-      "img": "https://static.remove.bg/remove-bg-web/581d704b6f77ec24f806185a708237a73ce0a356/assets/start_remove-c851bdf8d3127a24e2d137a55b1b427378cd17385b01aec6e59d5d4b5f39d2ec.png",
+      "name": null,
+      "surname": null,
+      "number": null,
+      "img": null,
+      "favourites": [],
+      "cart": []
+    },
+    {
+      "email": "maks@mail.ru",
+      "password": "$2a$10$x2vkCtNjpdgm5Mtr.voYYeDp5OOI6kNOlayyOVyV9e947uZXjjFzy",
+      "id": 2,
+      "name": null,
+      "surname": null,
+      "number": null,
+      "img": null,
+      "favourites": [],
+      "cart": []
+    },
+    {
+      "email": "mad@mail.ru",
+      "password": "$2a$10$zuK7OR1oXD7QQ5iknXqmKOE0fPzXztCi1577r4X4Y4lcdHPuJ3Y5u",
+      "id": 3,
+      "name": "Madina",
+      "surname": "Abdurasulova",
+      "number": "0705006088",
+      "img": "data:image/jpeg;base64,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",
+      "favourites": [],
       "cart": [
         {
           "title": "CSS",
@@ -1425,26 +1442,37 @@
           "description": "В этом курсе вы научитесь стилизовывать ваш сайт.",
           "price": 189,
           "imgUrl": "https://www.freepnglogos.com/uploads/html5-logo-png/html5-logo-css-logo-png-transparent-svg-vector-bie-supply-9.png",
+          "favourites": true,
           "id": 3
         }
       ]
     },
     {
-      "email": "max@mail.ru",
-      "password": "$2a$10$jwavKZZ4toM0OpKs/QEJA.HpOB.G29m5eFlRW1/o5emRsmmrjnBeK",
-      "id": 2,
+      "email": "said@mail.ru",
+      "password": "$2a$10$w.su9BuIzzmTsHgiUoToNuRHQ8/pGNB/xEw6s5nXUjYvN4/UsOhWi",
+      "id": 4,
+      "name": "Said",
+      "surname": null,
+      "number": null,
+      "img": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+      "favourites": [],
+      "cart": []
+    },
+    {
+      "email": "yuraae@mail.ru",
+      "password": "$2a$10$zgw3GIfi508eYXJDElQ9nePMtp/wvjCR9cq7Gv0Gd4D0i4E/9Z016",
+      "id": 5,
       "name": null,
       "surname": null,
       "number": null,
       "img": null,
-      "cart": [
+      "favourites": [
         {
           "title": "Auth",
           "mentor": "Биримкулов Максат",
           "description": "В этом курсе вы научитесь авторизовывать пользователей вашего сайта.",
           "imgUrl": "https://cdn-icons-png.flaticon.com/512/1791/1791961.png",
           "price": 99,
-          "favourites": true,
           "id": 1
         },
         {
@@ -1453,19 +1481,10 @@
           "description": "В этом курсе вы научитесь создавать скелет вашего сайта.",
           "price": 29,
           "imgUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/640px-HTML5_logo_and_wordmark.svg.png",
-          "favourites": true,
           "id": 2
-        },
-        {
-          "title": "CSS",
-          "mentor": "Биримкулов Максат",
-          "description": "В этом курсе вы научитесь стилизовывать ваш сайт.",
-          "price": 189,
-          "imgUrl": "https://www.freepnglogos.com/uploads/html5-logo-png/html5-logo-css-logo-png-transparent-svg-vector-bie-supply-9.png",
-          "favourites": true,
-          "id": 3
         }
-      ]
+      ],
+      "cart": []
     }
   ]
 }

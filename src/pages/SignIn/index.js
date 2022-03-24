@@ -23,6 +23,7 @@ const SignIn = ({setPerson, person, language, setLanguage}) => {
                 surname: null,
                 number: null,
                 img: null,
+                favourites: [],
                 cart: []
             });
             localStorage.setItem('email', e.target[0].value);

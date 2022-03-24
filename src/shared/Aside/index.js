@@ -3,12 +3,7 @@ import './aside.css';
 import {Link, NavLink} from 'react-router-dom';
 import axios from "axios";
 
-const Aside = ({language, setLanguage}) => {
-    const [favCourses, setFavCourses] = useState([]);
-    useEffect(() => {
-        axios('http://localhost:8080/courses')
-            .then(({data}) => setFavCourses(data))
-    }, []);
+const Aside = ({language, setLanguage, person, setPerson}) => {
 
     return (
         <aside className="aside">
@@ -24,13 +19,13 @@ const Aside = ({language, setLanguage}) => {
                 </NavLink>
                 <p className="aside__menu_category">{language ? 'Favorites' : 'Избранные'}</p>
                 {
-                    favCourses.map((item) => (
-                        item.favourites
-                            ? <NavLink key={item.id} to={`/app/courses/${item.title.toLowerCase()}`}>
+                    person.favourites.length > 0
+                        ? person.favourites.map((item) => (
+                            <NavLink key={item.id} to={`/app/courses/${item.title.toLowerCase()}`}>
                                 <i className="ri-bookmark-fill"/>{item.title}
                             </NavLink>
-                            : ''
-                    ))
+                        ))
+                        : ''
                 }
             </ul>
         </aside>

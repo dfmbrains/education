@@ -12,7 +12,7 @@ const Welcome = ({person, setPerson, language, setLanguage}) => {
             .then(({data}) => setPerson(data[0]));
         axios('http://localhost:8080/users')
             .then(({data}) => setUsers(data))
-    }, [person]);
+    }, []);
 
     return (
         <div className="welcome">
