@@ -1,0 +1,1 @@
+export const JSON_API = "https://education-js.herokuapp.com/api";

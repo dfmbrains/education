@@ -14,21 +14,16 @@ import online from '../../assets/images/home/online.png';
 import notes from '../../assets/images/home/notes.png';
 import sessions from '../../assets/images/home/sessions.png';
 import support from '../../assets/images/home/support.png';
-import html from '../../assets/images/home/html.png';
-import css from '../../assets/images/home/css.png';
-import javascript from '../../assets/images/home/js.png';
-import react from '../../assets/images/home/react.png';
-import redux from '../../assets/images/home/redux.png';
-import auth from '../../assets/images/home/auth.png';
 import reviews from '../../assets/images/home/reviews.png';
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
+import JSON_API from '../../api/index';
 
 const Home = ({language, setLanguage}) => {
     const [courses, setCourse] = useState([]);
 
     useEffect(() => {
-        axios('http://localhost:8080/courses')
+        axios(`${JSON_API}/courses`)
             .then(({data}) => setCourse(data))
     }, []);
 
