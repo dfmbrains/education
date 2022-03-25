@@ -17,7 +17,7 @@ import support from '../../assets/images/home/support.png';
 import reviews from '../../assets/images/home/reviews.png';
 import {useNavigate} from "react-router-dom";
 import axios from "axios";
-import JSON_API from '../../api/index';
+import {JSON_API} from "../../api";
 
 const Home = ({language, setLanguage}) => {
     const [courses, setCourse] = useState([]);

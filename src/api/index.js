@@ -1,1 +1,1 @@
-export const JSON_API = "https://education-js.herokuapp.com/api";
+export const JSON_API = "http://localhost:8080";
