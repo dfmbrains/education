@@ -70,19 +70,23 @@ const MyProduct = ({language, setLanguage, person, setPerson}) => {
     //favorites
     const [favourites, setFavourites] = useState([]);
     const favHandler = async () => {
-        await favourites.push(thisProudct);
-        await axios.patch(`http://localhost:8080/users/${person.id}`,
+        favourites.push(thisProudct);
+        axios.patch(`http://localhost:8080/users/${person.id}`,
             {
                 favourites: [...person.favourites, ...favourites]
             }).then(({data}) => favourites.length = 0)
             .catch(() => alert('error'));
+        axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+            .then(({data}) => setPerson(data[0]))
     };
-    const favDeleteHandler = async () => {
-        await axios.patch(`http://localhost:8080/users/${person.id}`,
+    const favDeleteHandler = () => {
+        axios.patch(`http://localhost:8080/users/${person.id}`,
             {
                 favourites: person.favourites.filter(item => item.title.toLowerCase() !== thisProudct.title.toLowerCase())
             }).then(({data}) => alert('deleted'))
-            .catch(() => alert('error'))
+            .catch(() => alert('error'));
+        axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+            .then(({data}) => setPerson(data[0]))
     };
 
     return (

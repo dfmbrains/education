@@ -6,12 +6,12 @@ import axios from "axios";
 import {useSelector} from "react-redux";
 import none from '../../assets/images/none.png';
 
-const MyCourses = ({person, setPerson, language, setLanguage}) => {
-
+const MyCourses = ({language, person, setPerson}) => {
+    let cartItems = useSelector(state => state.cart.itemsInCart);
+    const [myCourses, setMyCourses] = useState([]);
     //navigate
     const navigate = useNavigate();
 
-    let cartItems = useSelector(state => state.cart.itemsInCart);
     //search
     const [search, setSearch] = useState('');
     const searchHandler = (e) => {
@@ -19,27 +19,35 @@ const MyCourses = ({person, setPerson, language, setLanguage}) => {
         setSearch(e.target[0].value.toLowerCase())
     };
 
+
     //data
-    // [myCourses] utechka pamyati
-    const [myCourses, setMyCourses] = useState([]);
+
     useEffect(() => {
         axios(`http://localhost:8080/users/${person.id}`)
             .then(({data}) => setMyCourses(data.cart))
-    }, []);
+    }, [person.cart]);
+    console.log(myCourses, person);
 
     //delete
-    const myCoursesDelete = (item) => {
+    const myCoursesDelete = async (item) => {
+        await axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+            .then(({data}) => setPerson(data[0]));
+        await axios(`http://localhost:8080/users/${person.id}`)
+            .then(({data}) => setMyCourses(data.cart));
         if (myCourses.length > 1) {
-            axios.patch(`http://localhost:8080/users/${person.id}`,
+            await axios.patch(`http://localhost:8080/users/${person.id}`,
                 {
-                    cart: myCourses.filter((el) => el.id !== item.id)
+                    cart: myCourses.filter((el) => el.id !== item.id),
+                    favourites: person.favourites.filter((fav) => fav.id !== item.id)
                 })
-        } else {
-            axios.patch(`http://localhost:8080/users/${person.id}`,
+        } else if (myCourses.length === 1) {
+            await axios.patch(`http://localhost:8080/users/${person.id}`,
                 {
-                    cart: []
+                    cart: [],
+                    favourites: person.favourites.filter((fav) => fav.id !== item.id)
                 })
         }
+        await window.location.reload();
     };
 
     return (
