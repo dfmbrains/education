@@ -5,6 +5,7 @@ import {Link, useNavigate} from "react-router-dom";
 import axios from "axios";
 import {useSelector} from "react-redux";
 import none from '../../assets/images/none.png';
+import {JSON_API} from "../../api";
 
 const MyCourses = ({language, person, setPerson}) => {
     let cartItems = useSelector(state => state.cart.itemsInCart);
@@ -23,25 +24,25 @@ const MyCourses = ({language, person, setPerson}) => {
     //data
 
     useEffect(() => {
-        axios(`http://localhost:8080/users/${person.id}`)
+        axios(`${JSON_API}/users/${person.id}`)
             .then(({data}) => setMyCourses(data.cart))
     }, [person.cart]);
     console.log(myCourses, person);
 
     //delete
     const myCoursesDelete = async (item) => {
-        await axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+        await axios.get(`${JSON_API}/users?email=${localStorage.getItem('email')}`)
             .then(({data}) => setPerson(data[0]));
-        await axios(`http://localhost:8080/users/${person.id}`)
+        await axios(`${JSON_API}/users/${person.id}`)
             .then(({data}) => setMyCourses(data.cart));
         if (myCourses.length > 1) {
-            await axios.patch(`http://localhost:8080/users/${person.id}`,
+            await axios.patch(`${JSON_API}/users/${person.id}`,
                 {
                     cart: myCourses.filter((el) => el.id !== item.id),
                     favourites: person.favourites.filter((fav) => fav.id !== item.id)
                 })
         } else if (myCourses.length === 1) {
-            await axios.patch(`http://localhost:8080/users/${person.id}`,
+            await axios.patch(`${JSON_API}/users/${person.id}`,
                 {
                     cart: [],
                     favourites: person.favourites.filter((fav) => fav.id !== item.id)

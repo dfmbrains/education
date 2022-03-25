@@ -11,6 +11,7 @@ import TableBody from "@mui/material/TableBody";
 import './myProduct.css';
 import {Button} from "@mui/material";
 import {Fancybox} from "@fancyapps/ui";
+import {JSON_API} from "../../api";
 
 const MyProduct = ({language, setLanguage, person, setPerson}) => {
 
@@ -25,9 +26,9 @@ const MyProduct = ({language, setLanguage, person, setPerson}) => {
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        axios('http://localhost:8080/courses')
+        axios(`${JSON_API}/courses`)
             .then(({data}) => setProduct(data));
-        axios(`http://localhost:8080/${path}`)
+        axios(`${JSON_API}/${path}`)
             .then(({data}) => setMyLessons(data))
     }, []);
 
@@ -71,21 +72,21 @@ const MyProduct = ({language, setLanguage, person, setPerson}) => {
     const [favourites, setFavourites] = useState([]);
     const favHandler = async () => {
         favourites.push(thisProudct);
-        axios.patch(`http://localhost:8080/users/${person.id}`,
+        axios.patch(`${JSON_API}/users/${person.id}`,
             {
                 favourites: [...person.favourites, ...favourites]
             }).then(({data}) => favourites.length = 0)
             .catch(() => alert('error'));
-        axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+        axios.get(`${JSON_API}/users?email=${localStorage.getItem('email')}`)
             .then(({data}) => setPerson(data[0]))
     };
     const favDeleteHandler = () => {
-        axios.patch(`http://localhost:8080/users/${person.id}`,
+        axios.patch(`${JSON_API}/users/${person.id}`,
             {
                 favourites: person.favourites.filter(item => item.title.toLowerCase() !== thisProudct.title.toLowerCase())
             }).then(({data}) => alert('deleted'))
             .catch(() => alert('error'));
-        axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+        axios.get(`${JSON_API}/users?email=${localStorage.getItem('email')}`)
             .then(({data}) => setPerson(data[0]))
     };
 

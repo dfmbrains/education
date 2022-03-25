@@ -4,6 +4,7 @@ import './courseStore.css';
 import {Button} from "@mui/material";
 import '../../shared/Platform/platform.css';
 import {Link, useNavigate} from "react-router-dom";
+import {JSON_API} from "../../api";
 
 const CourseStore = ({person, setPerson, language, setLanguage}) => {
 
@@ -13,7 +14,7 @@ const CourseStore = ({person, setPerson, language, setLanguage}) => {
     //data
     const [course, setCourse] = useState([]);
     useEffect(() => {
-        axios('http://localhost:8080/courses')
+        axios(`${JSON_API}/courses`)
             .then(({data}) => setCourse(data))
     }, []);
 

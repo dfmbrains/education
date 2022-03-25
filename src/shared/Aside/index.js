@@ -2,11 +2,12 @@ import React, {useEffect, useState} from 'react';
 import './aside.css';
 import {Link, NavLink} from 'react-router-dom';
 import axios from "axios";
+import {JSON_API} from "../../api";
 
 const Aside = ({language, setLanguage}) => {
     const [person, setPerson] = useState([]);
     useEffect(() => {
-        axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+        axios.get(`${JSON_API}/users?email=${localStorage.getItem('email')}`)
             .then(({data}) => setPerson(data[0]));
     }, []);
 

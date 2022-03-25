@@ -3,17 +3,18 @@ import axios from "axios";
 import {Button} from "@mui/material";
 import './settings.css';
 import change from '../../assets/images/change.png';
+import {JSON_API} from "../../api";
 
 const Settings = ({person, setPerson, language, setLanguage}) => {
 
     //data
     useEffect(() => {
-        axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+        axios.get(`${JSON_API}/users?email=${localStorage.getItem('email')}`)
             .then(({data}) => setPerson(data[0]))
     }, []);
 
     const infoHandler = (e) => {
-        axios.patch(`http://localhost:8080/users/${person.id}`,
+        axios.patch(`${JSON_API}/users/${person.id}`,
             {
                 email: e.target[0].value.length === 0 ? person.email : e.target[0].value,
                 name: e.target[1].value.length === 0 ? person.name : e.target[1].value,

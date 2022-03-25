@@ -3,13 +3,14 @@ import axios from "axios";
 import {Link, useNavigate, Navigate} from 'react-router-dom';
 import {Button} from "@mui/material";
 import teaching from "../../assets/images/home/teaching.png";
+import {JSON_API} from "../../api";
 
 const SignUp = ({person, setPerson, language, setLanguage}) => {
 
     const navigate = useNavigate();
     const createAccount = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8080/users',
+        axios.post(`${JSON_API}/users`,
             {
                 id: null,
                 email: e.target[0].value,
@@ -37,7 +38,7 @@ const SignUp = ({person, setPerson, language, setLanguage}) => {
     };
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+        axios.get(`${JSON_API}/users?email=${localStorage.getItem('email')}`)
             .then(({data}) => setPerson(data[0]))
     }, []);
 

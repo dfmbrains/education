@@ -4,13 +4,14 @@ import {useNavigate, Navigate, Link} from "react-router-dom";
 import illustration from '../../assets/images/home/illustrtaion.png';
 import {Button} from "@mui/material";
 import './signin.css';
+import {JSON_API} from "../../api";
 
 const SignIn = ({setPerson, person, language, setLanguage}) => {
     const navigate = useNavigate();
 
     const signAccount = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:8080/signin',
+        axios.post(`${JSON_API}/signin`,
             {
                 email: e.target[0].value,
                 password: e.target[1].value,
@@ -32,10 +33,9 @@ const SignIn = ({setPerson, person, language, setLanguage}) => {
     };
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+        axios.get(`${JSON_API}/users?email=${localStorage.getItem('email')}`)
             .then(({data}) => setPerson(data[0]))
     }, []);
-    console.log(language)
 
 
     return (

@@ -13,6 +13,7 @@ import Paper from '@mui/material/Paper';
 import {Button} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import {setItemInCart, deleteItemFromCart} from '../../redux/cart/reducer';
+import {JSON_API} from "../../api";
 
 const Product = ({person, setPreson, language, setLanguage}) => {
 
@@ -21,9 +22,9 @@ const Product = ({person, setPreson, language, setLanguage}) => {
     const [product, setProduct] = useState([]);
     const [lessons, setLessons] = useState([]);
     useEffect(() => {
-        axios('http://localhost:8080/courses')
+        axios(`${JSON_API}/courses`)
             .then(({data}) => setProduct(data));
-        axios(`http://localhost:8080/${path}`)
+        axios(`${JSON_API}/${path}`)
             .then(({data}) => setLessons(data))
     }, []);
 
@@ -81,7 +82,7 @@ const Product = ({person, setPreson, language, setLanguage}) => {
     //     return arrPersonItems = [...acc, rec]
     // }, []);
     useEffect(() => {
-        axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+        axios.get(`${JSON_API}/users?email=${localStorage.getItem('email')}`)
             .then(({data}) => setArrPersonItems(data[0].cart))
     }, []);
 

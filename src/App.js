@@ -14,6 +14,7 @@ import axios from "axios";
 import MyProduct from "./pages/MyProduct";
 import "@fancyapps/ui/dist/fancybox.css";
 import Error from "./pages/Error";
+import {JSON_API} from "./api";
 
 function App() {
     const [person, setPerson] = useState({
@@ -28,7 +29,7 @@ function App() {
         cart: []
     });
     useEffect(() => {
-        axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+        axios.get(`${JSON_API}/users?email=${localStorage.getItem('email')}`)
             .then(({data}) => setPerson(data[0]))
     }, []);
 

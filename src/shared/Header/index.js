@@ -5,12 +5,13 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faChevronDown} from "@fortawesome/free-solid-svg-icons";
 import {Button} from "@mui/material";
 import axios from "axios";
+import {JSON_API} from "../../api";
 
 const Header = ({person, setPerson, language, setLanguage, burger, setBurger}) => {
     const navigate = useNavigate();
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        axios('http://localhost:8080/courses')
+        axios(`${JSON_API}/courses`)
             .then(({data}) => setCourses(data))
     }, []);
     return (

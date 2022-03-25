@@ -4,11 +4,12 @@ import {Button} from "@mui/material";
 import {useDispatch, useSelector} from "react-redux";
 import axios from "axios";
 import {deleteItemFromCart} from "../../redux/cart/reducer";
+import {JSON_API} from "../../api";
 
 const Cart = ({open, setOpen, person, setPerson}) => {
     const [course, setCourse] = useState({});
     useEffect(() => {
-        axios('http://localhost:8080/courses')
+        axios(`${JSON_API}/courses`)
             .then(({data}) => setCourse(data))
     }, []);
 
@@ -25,7 +26,7 @@ const Cart = ({open, setOpen, person, setPerson}) => {
 
     //buy courses
     const buyCourses = () => {
-        axios.patch(`http://localhost:8080/users/${person.id}`,
+        axios.patch(`${JSON_API}/users/${person.id}`,
             {
                 cart: [...person.cart, ...cartItems]
             }).then(() => console.log('success'))

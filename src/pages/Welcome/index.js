@@ -2,15 +2,16 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import welcome from '../../assets/images/welcome.png';
 import './welcome.css';
+import {JSON_API} from "../../api";
 
 const Welcome = ({person, setPerson, language, setLanguage}) => {
 
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/users?email=${localStorage.getItem('email')}`)
+        axios.get(`${JSON_API}/users?email=${localStorage.getItem('email')}`)
             .then(({data}) => setPerson(data[0]));
-        axios('http://localhost:8080/users')
+        axios(`${JSON_API}/users`)
             .then(({data}) => setUsers(data))
     }, []);
 
